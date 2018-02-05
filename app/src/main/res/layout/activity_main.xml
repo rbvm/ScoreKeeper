@@ -27,7 +27,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_marginTop="50dp"
+                android:background="#A6263238">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -35,6 +36,15 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_weight="1"
                     android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:fontFamily="sans-serif"
+                        android:text="Team A"
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF"
+                        android:textSize="34sp" />
 
                     <TextView
                         android:id="@+id/team_a_score"
@@ -48,15 +58,6 @@
                         android:textAlignment="center"
                         android:textColor="#FFFFFF"
                         android:textSize="56sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:fontFamily="sans-serif"
-                        android:text="Team A"
-                        android:textAlignment="center"
-                        android:textColor="#FFFFFF"
-                        android:textSize="34sp" />
 
                     <Button
                         android:layout_width="wrap_content"
@@ -100,7 +101,7 @@
                                 android:layout_marginTop="8dp"
                                 android:gravity="center"
                                 android:text="0"
-                                android:textColor="#2196F3"
+                                android:textColor="#FFFFFF"
                                 android:textSize="34sp" />
 
                         </RelativeLayout>
@@ -133,7 +134,7 @@
                                 android:layout_marginTop="8dp"
                                 android:gravity="center"
                                 android:text="0"
-                                android:textColor="#2196F3"
+                                android:textColor="#FFFFFF"
                                 android:textSize="34sp" />
 
                         </RelativeLayout>
@@ -166,7 +167,7 @@
                                 android:layout_marginTop="8dp"
                                 android:gravity="center"
                                 android:text="0"
-                                android:textColor="#2196F3"
+                                android:textColor="#FFFFFF"
                                 android:textSize="34sp" />
 
                         </RelativeLayout>
@@ -178,7 +179,8 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    >
 
                     <TextView
                         android:layout_width="1dp"
@@ -220,6 +222,15 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:fontFamily="sans-serif"
+                        android:text="Team B"
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF"
+                        android:textSize="34dp" />
+
+                    <TextView
                         android:id="@+id/team_b_score"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -231,15 +242,6 @@
                         android:textAlignment="center"
                         android:textColor="#FFFFFF"
                         android:textSize="56sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:fontFamily="sans-serif"
-                        android:text="Team B"
-                        android:textAlignment="center"
-                        android:textColor="#FFFFFF"
-                        android:textSize="34dp" />
 
                     <Button
                         android:layout_width="wrap_content"
@@ -270,7 +272,7 @@
                                 android:layout_marginTop="8dp"
                                 android:gravity="center"
                                 android:text="0"
-                                android:textColor="#2196F3"
+                                android:textColor="#FFFFFF"
                                 android:textSize="34sp" />
 
                             <ImageButton
@@ -303,7 +305,7 @@
                                 android:layout_marginTop="8dp"
                                 android:gravity="center"
                                 android:text="0"
-                                android:textColor="#2196F3"
+                                android:textColor="#FFFFFF"
                                 android:textSize="34sp" />
 
                             <ImageButton
@@ -325,20 +327,6 @@
                             android:layout_height="wrap_content"
                             android:gravity="left">
 
-                            <TextView
-                                android:id="@+id/team_b_penalty"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentLeft="true"
-                                android:layout_centerInParent="true"
-                                android:layout_marginBottom="8dp"
-                                android:layout_marginLeft="16dp"
-                                android:layout_marginTop="8dp"
-                                android:gravity="center"
-                                android:text="0"
-                                android:textColor="#2196F3"
-                                android:textSize="34sp" />
-
                             <Button
                                 android:layout_width="wrap_content"
                                 android:layout_height="52dp"
@@ -351,6 +339,22 @@
                                 android:text="Penalty"
                                 android:textColor="#FFFFFF" />
 
+                            <TextView
+                                android:id="@+id/team_b_penalty"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_centerInParent="true"
+                                android:layout_marginBottom="8dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="8dp"
+                                android:gravity="center"
+                                android:text="0"
+                                android:textColor="#FFFFFF"
+                                android:textSize="34sp" />
+
+
+
                         </RelativeLayout>
 
                     </LinearLayout>
@@ -361,11 +365,11 @@
         </LinearLayout>
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_margin="16dp"
+            android:padding="20dp"
             android:onClick="resetScore"
             android:text="Reset"
             android:textColor="#FFFFFF" />
