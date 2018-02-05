@@ -7,28 +7,81 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    TextView scoreTeamAa;
+    TextView scoreTeamBb;
+    TextView yellowTeamAa;
+    TextView yellowTeamBb;
+    TextView redTeamAa;
+    TextView redTeamBb;
+    TextView penaltyTeamAa;
+    TextView penaltyTeamBb;
     int scoreTeamA = 0;
     int scoreTeamB = 0;
+    int yellowTeamA = 0;
+    int yellowTeamB = 0;
+    int redTeamA = 0;
+    int redTeamB = 0;
+    int penaltyTeamA = 0;
+    int penaltyTeamB = 0;
+    int lastActivity = 0;
+    int lastActivityPlayer = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        scoreTeamAa = findViewById(R.id.team_a_score);
+        scoreTeamBb = findViewById(R.id.team_b_score);
+        yellowTeamAa = findViewById(R.id.team_a_yellow);
+        yellowTeamBb = findViewById(R.id.team_b_yellow);
+        redTeamAa = findViewById(R.id.team_a_red);
+        redTeamBb = findViewById(R.id.team_b_red);
+        penaltyTeamAa = findViewById(R.id.team_a_penalty);
+        penaltyTeamBb = findViewById(R.id.team_b_penalty);
     }
 
-    int yellowTeamA = 0;
-    int redTeamA = 0;
-    int penaltyTeamA = 0;
-    int yellowTeamB = 0;
-    int redTeamB = 0;
-    int penaltyTeamB = 0;
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("scoreTeamA", scoreTeamA);
+        outState.putInt("scoreTeamB", scoreTeamB);
+        outState.putInt("yellowTeamA", yellowTeamA);
+        outState.putInt("yellowTeamB", yellowTeamB);
+        outState.putInt("redTeamA", redTeamA);
+        outState.putInt("redTeamB", redTeamB);
+        outState.putInt("penaltyTeamA", penaltyTeamA);
+        outState.putInt("penaltyTeamB", penaltyTeamB);
+        outState.putInt("lastActivty", lastActivity);
+        outState.putInt("lastActivityPlayer", lastActivityPlayer);
+    }
+
+    @Override
+    public void onRestoreInstanceState(Bundle saveInstanceState) {
+        super.onRestoreInstanceState(saveInstanceState);
+        scoreTeamA = saveInstanceState.getInt("scoreTeamA");
+        scoreTeamB = saveInstanceState.getInt("scoreTeamB");
+        yellowTeamA = saveInstanceState.getInt("yellowTeamA");
+        yellowTeamB = saveInstanceState.getInt("yellowTeamB");
+        redTeamA = saveInstanceState.getInt("redTeamA");
+        redTeamB = saveInstanceState.getInt("redTeamB");
+        penaltyTeamA = saveInstanceState.getInt("penaltyTeamA");
+        penaltyTeamB = saveInstanceState.getInt("penaltyTeamB");
+        displayForTeamA(scoreTeamA);
+        displayForTeamB(scoreTeamB);
+        displayYellowTeamA(yellowTeamA);
+        displayYellowTeamB(yellowTeamB);
+        displayRedTeamA(redTeamA);
+        displayRedTeamB(redTeamB);
+        displayPenaltyTeamA(penaltyTeamA);
+        displayPenaltyTeamB(penaltyTeamB);
+    }
 
     /**
      * Increase score for Team A.
      */
     public void addForTeamA(View v) {
         scoreTeamA = scoreTeamA + 1;
-        displayForTeamA (scoreTeamA);
+        displayForTeamA(scoreTeamA);
     }
 
     /**
@@ -93,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void addForTeamB(View v) {
         scoreTeamB = scoreTeamB + 1;
-        displayForTeamB (scoreTeamB);
+        displayForTeamB(scoreTeamB);
     }
 
     /**
@@ -155,7 +208,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Reset the score, card and penalties for both teams to 0.
      */
-    public void resetScore (View v) {
+    public void resetScore(View v) {
         scoreTeamA = 0;
         scoreTeamB = 0;
         yellowTeamA = 0;
@@ -172,7 +225,8 @@ public class MainActivity extends AppCompatActivity {
         displayRedTeamB(redTeamB);
         displayPenaltyTeamA(penaltyTeamA);
         displayPenaltyTeamB(penaltyTeamB);
-        }
+    }
+
 
 }
 
