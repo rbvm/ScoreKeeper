@@ -176,7 +176,7 @@ public class MainActivity extends AppCompatActivity {
      * Displays the given score for Team B.
      */
     public void displayForTeamB(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.team_b_score);
+        TextView scoreView = findViewById(R.id.team_b_score);
         scoreView.setText(String.valueOf(score));
     }
 
@@ -184,7 +184,7 @@ public class MainActivity extends AppCompatActivity {
      * Displays the yellow cards for Team B.
      */
     public void displayYellowTeamB(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.team_b_yellow);
+        TextView scoreView = findViewById(R.id.team_b_yellow);
         scoreView.setText(String.valueOf(score));
     }
 
@@ -192,7 +192,7 @@ public class MainActivity extends AppCompatActivity {
      * Displays the red cards for Team B.
      */
     public void displayRedTeamB(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.team_b_red);
+        TextView scoreView = findViewById(R.id.team_b_red);
         scoreView.setText(String.valueOf(score));
     }
 
@@ -200,7 +200,7 @@ public class MainActivity extends AppCompatActivity {
      * Displays the penalties for Team B.
      */
     public void displayPenaltyTeamB(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.team_b_penalty);
+        TextView scoreView = findViewById(R.id.team_b_penalty);
         scoreView.setText(String.valueOf(score));
     }
 
